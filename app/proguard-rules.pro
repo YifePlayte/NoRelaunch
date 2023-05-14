@@ -1,0 +1,1 @@
+-keep class com.yifeplayte.norelaunch.hook.MainHook { <init>(); }-keep class * extends com.yifeplayte.norelaunch.hook.hooks.* {    <init>();    com.yifeplayte.norelaunch.hook.hooks.** INSTANCE;}-keepattributes RuntimeVisibleAnnotations

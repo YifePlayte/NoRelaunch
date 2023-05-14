@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name" translatable="false">NoRelaunch</string>
+    <string name="xposed_desc" translatable="false">NoRelaunch</string>
+    <string name="warning">Warning</string>
+    <string name="not_support">You seem to be using an outdated version of LSPosed or LSPosed is not active, please update LSPosed or activate it and try again.</string>
+    <string name="done">OK</string>
+    <string name="reboot">Reboot</string>
+    <string name="reboot_tips">Are you sure to reboot?</string>
+    <string name="cancel">Cancel</string>
+    <string name="reboot_system">Reboot system</string>
+    <string name="restart_all_scope">Restart all scope</string>
+    <string name="restart_all_scope_tips">Are you sure to restart all scope?</string>
+    <string name="finished">Finished</string>
+    <string name="system_ui">System UI</string>
+    <string name="restore_near_by_tile">Restore NearBy Share tile</string>
+    <string name="android">System Framework</string>
+    <string name="no_relaunch">NoRelaunch</string>
+</resources>
