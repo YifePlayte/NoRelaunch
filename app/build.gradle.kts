@@ -20,7 +20,8 @@ android {
         applicationVariants.configureEach {
             outputs.configureEach {
                 if (this is com.android.build.gradle.internal.api.BaseVariantOutputImpl) {
-                    outputFileName = outputFileName.replace("app", "NoRelaunch").replace(Regex("debug|release"), versionName)
+                    outputFileName = outputFileName.replace("app", rootProject.name)
+                        .replace(Regex("debug|release"), versionName)
                 }
             }
         }
