@@ -16,5 +16,5 @@ dependencyResolutionManagement {
 
 include(":app")
 include(":blockmiui")
-rootProject.name = "norelaunch"
+rootProject.name = "NoRelaunch"
 
