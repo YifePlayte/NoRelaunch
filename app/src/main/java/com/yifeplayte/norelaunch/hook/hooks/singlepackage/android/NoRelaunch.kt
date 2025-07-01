@@ -1,28 +1,25 @@
 package com.yifeplayte.norelaunch.hook.hooks.singlepackage.android
 
-import android.content.pm.ActivityInfo
-import android.content.pm.ActivityInfo.CONFIG_MCC
-import android.content.pm.ActivityInfo.CONFIG_MNC
-import android.content.pm.ActivityInfo.CONFIG_LOCALE
-import android.content.pm.ActivityInfo.CONFIG_TOUCHSCREEN
+import android.content.pm.ActivityInfo.CONFIG_COLOR_MODE
+import android.content.pm.ActivityInfo.CONFIG_DENSITY
+import android.content.pm.ActivityInfo.CONFIG_FONT_SCALE
+import android.content.pm.ActivityInfo.CONFIG_FONT_WEIGHT_ADJUSTMENT
+import android.content.pm.ActivityInfo.CONFIG_GRAMMATICAL_GENDER
 import android.content.pm.ActivityInfo.CONFIG_KEYBOARD
 import android.content.pm.ActivityInfo.CONFIG_KEYBOARD_HIDDEN
+import android.content.pm.ActivityInfo.CONFIG_LAYOUT_DIRECTION
+import android.content.pm.ActivityInfo.CONFIG_LOCALE
+import android.content.pm.ActivityInfo.CONFIG_MCC
+import android.content.pm.ActivityInfo.CONFIG_MNC
 import android.content.pm.ActivityInfo.CONFIG_NAVIGATION
 import android.content.pm.ActivityInfo.CONFIG_ORIENTATION
 import android.content.pm.ActivityInfo.CONFIG_SCREEN_LAYOUT
-import android.content.pm.ActivityInfo.CONFIG_UI_MODE
 import android.content.pm.ActivityInfo.CONFIG_SCREEN_SIZE
 import android.content.pm.ActivityInfo.CONFIG_SMALLEST_SCREEN_SIZE
-import android.content.pm.ActivityInfo.CONFIG_DENSITY
-import android.content.pm.ActivityInfo.CONFIG_LAYOUT_DIRECTION
-import android.content.pm.ActivityInfo.CONFIG_COLOR_MODE
-import android.content.pm.ActivityInfo.CONFIG_GRAMMATICAL_GENDER
-import android.content.pm.ActivityInfo.CONFIG_FONT_SCALE
-import android.content.pm.ActivityInfo.CONFIG_FONT_WEIGHT_ADJUSTMENT
+import android.content.pm.ActivityInfo.CONFIG_TOUCHSCREEN
+import android.content.pm.ActivityInfo.CONFIG_UI_MODE
 import com.github.kyuubiran.ezxhelper.ClassUtils.loadClass
 import com.github.kyuubiran.ezxhelper.HookFactory.`-Static`.createHook
-import com.github.kyuubiran.ezxhelper.Log
-import com.github.kyuubiran.ezxhelper.ObjectUtils.getObjectOrNullAs
 import com.github.kyuubiran.ezxhelper.finders.MethodFinder.`-Static`.methodFinder
 import com.yifeplayte.norelaunch.hook.hooks.BaseHook
 import com.yifeplayte.norelaunch.hook.utils.XSharedPreferences.getBoolean
@@ -51,9 +48,9 @@ object NoRelaunch : BaseHook() {
                         "CONFIG_DENSITY" to CONFIG_DENSITY,
                         "CONFIG_LAYOUT_DIRECTION" to CONFIG_LAYOUT_DIRECTION,
                         "CONFIG_COLOR_MODE" to CONFIG_COLOR_MODE,
-                        "CONFIG_GRAMMATICAL_GENDER" to CONFIG_GRAMMATICAL_GENDER,
                         "CONFIG_FONT_SCALE" to CONFIG_FONT_SCALE,
-                        "CONFIG_FONT_WEIGHT_ADJUSTMENT" to CONFIG_FONT_WEIGHT_ADJUSTMENT
+                        "CONFIG_GRAMMATICAL_GENDER" to CONFIG_GRAMMATICAL_GENDER,
+                        "CONFIG_FONT_WEIGHT_ADJUSTMENT" to CONFIG_FONT_WEIGHT_ADJUSTMENT,
                     ).fold(0) { acc, (config, value) ->
                         acc or if (getBoolean(config, false)) value else 0
                     }
@@ -79,8 +76,8 @@ object NoRelaunch : BaseHook() {
         if (configChanges and CONFIG_DENSITY > 0) append("|density")
         if (configChanges and CONFIG_LAYOUT_DIRECTION > 0) append("|layoutDirection")
         if (configChanges and CONFIG_COLOR_MODE > 0) append("|colorMode")
-        if (configChanges and CONFIG_GRAMMATICAL_GENDER > 0) append("|grammaticalGender")
         if (configChanges and CONFIG_FONT_SCALE > 0) append("|fontScale")
+        if (configChanges and CONFIG_GRAMMATICAL_GENDER > 0) append("|grammaticalGender")
         if (configChanges and CONFIG_FONT_WEIGHT_ADJUSTMENT > 0) append("|fontWeightAdjustment")
     }.trim('|')
 }

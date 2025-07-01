@@ -1,1 +1,1 @@
--keep class com.yifeplayte.norelaunch.hook.MainHook { <init>(); }-keep class * extends com.yifeplayte.norelaunch.hook.hooks.* {    <init>();    com.yifeplayte.norelaunch.hook.hooks.** INSTANCE;}-keepattributes RuntimeVisibleAnnotations
+-keep class com.yifeplayte.norelaunch.hook.MainHook { <init>(); }-keep class * extends com.yifeplayte.norelaunch.hook.hooks.* {    <init>();    com.yifeplayte.norelaunch.hook.hooks.** INSTANCE;}-keepattributes RuntimeVisibleAnnotations-dontwarn androidx.window.extensions.area.ExtensionWindowAreaPresentation

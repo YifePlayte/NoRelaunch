@@ -31,6 +31,7 @@ object LoadPackageParam {
      * 获取被 hook 应用的版本名称
      * 当被 hook 的为系统框架时，返回 Android 版本号或版本名称
      */
+    @Suppress("DEPRECATION")
     fun XC_LoadPackage.LoadPackageParam.getAppVersionName() = runCatching {
         if (packageName == "android") {
             Build.VERSION.RELEASE_OR_CODENAME
