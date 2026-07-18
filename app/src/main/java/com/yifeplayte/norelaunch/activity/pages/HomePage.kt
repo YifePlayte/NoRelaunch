@@ -125,6 +125,7 @@ fun HomePage(
                     SPSwitch("CONFIG_FONT_SCALE", "CONFIG_FONT_SCALE")
                     SPSwitch("CONFIG_GRAMMATICAL_GENDER", "CONFIG_GRAMMATICAL_GENDER")
                     SPSwitch("CONFIG_FONT_WEIGHT_ADJUSTMENT", "CONFIG_FONT_WEIGHT_ADJUSTMENT")
+                    SPSwitch("CONFIG_ASSETS_PATHS", "CONFIG_ASSETS_PATHS")
                 }
             }
             item {

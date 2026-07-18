@@ -1,5 +1,6 @@
 package com.yifeplayte.norelaunch.hook.hooks.singlepackage.android
 
+import android.content.pm.ActivityInfo.CONFIG_ASSETS_PATHS
 import android.content.pm.ActivityInfo.CONFIG_COLOR_MODE
 import android.content.pm.ActivityInfo.CONFIG_DENSITY
 import android.content.pm.ActivityInfo.CONFIG_FONT_SCALE
@@ -51,6 +52,7 @@ object NoRelaunch : BaseHook() {
                         "CONFIG_FONT_SCALE" to CONFIG_FONT_SCALE,
                         "CONFIG_GRAMMATICAL_GENDER" to CONFIG_GRAMMATICAL_GENDER,
                         "CONFIG_FONT_WEIGHT_ADJUSTMENT" to CONFIG_FONT_WEIGHT_ADJUSTMENT,
+                        "CONFIG_ASSETS_PATHS" to CONFIG_ASSETS_PATHS,
                     ).fold(0) { acc, (config, value) ->
                         acc or if (getBoolean(config, false)) value else 0
                     }
